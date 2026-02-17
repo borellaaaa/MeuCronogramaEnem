@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma ENEM Pro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="viewLogin" class="container center-screen">
+        <div class="card login-card">
+            <h1>🚀 Meu Cronograma ENEM</h1>
+            <p>Plataforma completa com inteligência de revisão.</p>
+            <div style="margin: 20px 0; text-align: left;">
+                <input type="checkbox" id="lgpdConsent">
+                <label for="lgpdConsent" style="font-size: 0.9rem;">
+                    Concordo com os Termos de Uso e Política de Privacidade. 
+                    Seus dados (Nome e Email) serão usados apenas para acesso à plataforma (LGPD).
+                </label>
+            </div>
+            <button id="btnLogin" class="btn-primary">Entrar com Google</button>
+        </div>
+    </div>
+
+    <div id="viewPayment" class="container center-screen" style="display:none;">
+        <div class="card">
+            <h2>🔒 Acesso Premium Necessário</h2>
+            <p>Para acessar o cronograma inteligente e materiais, ative sua assinatura.</p>
+            <div class="price-tag">R$ 10,00 / mês</div>
+            <a id="payLink" href="#" target="_blank" class="btn-success">Pagar com Cakto</a>
+            <p><small>Após o pagamento, o sistema liberará seu acesso automaticamente em alguns instantes.</small></p>
+            <button onclick="location.reload()" class="btn-secondary">Já paguei (Atualizar)</button>
+        </div>
+    </div>
+
+    <div id="viewDashboard" class="container" style="display:none;">
+        <header>
+            <div class="mascot-area">
+                <span id="mascotIcon" class="mascot">❄️</span>
+                <span style="font-weight: bold;">Sequência: <span id="streakCount">0</span> dias</span>
+            </div>
+            <div class="user-menu">
+                <button id="btnOpenAdmin" style="display:none; background: #333;">ADMIN</button>
+                <button id="btnLogout" class="btn-secondary">Sair</button>
+            </div>
+        </header>
+
+        <section class="study-controls">
+            <h2>📚 Área de Estudo</h2>
+            <select id="selMateria" class="full-select"></select>
+        </section>
+
+        <section id="contentArea" class="content-list">
+            <p>Selecione uma matéria acima para começar.</p>
+        </section>
+    </div>
+
+    <div id="viewAdmin" class="container" style="display:none;">
+        <header>
+            <h2>🛡️ Painel Administrativo</h2>
+            <button id="btnAdminLogout">Voltar ao App</button>
+        </header>
+        <div class="card">
+            <p>Gerencie os alunos e pagamentos. (Dados Criptografados no Banco)</p>
+            <div id="adminUserList"></div>
+        </div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
